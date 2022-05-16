@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>15 Criteria for CO2 storage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <style>
+      h1 {
+        text-align: center;
+      }
+      .mar {
+        margin: 12px 42px;
+        padding: 15px;
+        border-radius: 35px;
+        max-width: 5000px;
+        border: 2px solid #dadde1;
+      }
+      p {
+        margin: 10px 40px;
+        text-align: justify;
+        font-family: "Montserrat", sans-serif;
+      }
+      button {
+        margin: 0 auto;
+        display: block;
+        box-shadow: grey;
+        transition: all 500ms linear;
+        box-shadow: 4px 4px 2px gray;
+        line-height: 100%;
+        padding: 20px;
+        border: 4px solid grey;
+        border-radius: 40px;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: #82858f;
+        color: white;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>
+      15 Criteria for assessing and ranking sedimentary basins in terms of their
+      suitability for CO2 sequestration or storage
+    </h1>
+    <div class="mar">
+      <p>
+        An overall ranking score would take these and other criteria into
+        account to arrive at a quantitative evaluation regarding a basin’s
+        suitability for CO2 sequestration.Three to five classes have been
+        defined in each category listed from the least favourable to the most
+        favourable for CO2 sequestration or storage (Bachu, 2003). However, if
+        CO2 geological sequestration or storage are to be implemented on a large
+        scale, then there is need for a systematic, quantitative analysis of
+        sedimentary basins in terms of their suitability
+      </p>
+      <p>......</p>
+      <hr />
+      <form action="#" method="post" onsubmit="return Calcula()">
+      <p>
+        Tectonic setting
+        <br />
+        <select name="tectonicSetting" id="tectonicSetting">
+          <option value=1>Convergent oceanic</option>
+          <option value=3>
+            Convergent intramontane
+          </option>
+          <option value=7>
+            Divergent continental shelf
+          </option>
+          <option value=15>Divergent foredeep</option>
+          <option value="15">Divergent cratonic</option>
+        </select>
+        <input type="number" name="wpp1" id="wpp1" step="0.01" max="1" min="0" value="0.07"/>
+      </p>
+      <p>
+        Size
+        <br />
+        <select name="Size" id="Size">
+          <option value=1>Small</option>
+          <option value=3>Medium</option>
+          <option value=5>Large</option>
+          <option value="9">Giant</option>
+        </select>
+        <input type="number" name="wpp2" id="wpp2" step="0.01" max="1" min="0" value="0.06"/>
+      </p>
+      <p>
+        Depth
+        <br />
+        <select name="Depth" id="Depth">
+          <option value=1>Shallow less that 1,500 m</option>
+          <option value=3>Intermediate (1,500–3,500 m)</option>
+          <option value="5">Deep (>3,500 m)</option>
+        </select>
+        <input type="number" name="wpp3" id="wpp3" step="0.01" max="1" min="0" value="0.07"/>
+      </p>
+      <p>
+        Geology
+        <br />
+        <select name="Geology" id="Geology">
+          <option value=1>Extensively faulted and fractured</option>
+          <option value=3>Moderately faulted and fractured</option>
+          <option value="7">
+            Limited faulting and fracturing, extensive shales
+          </option>
+        </select>
+        <input type="number" name="wpp4" id="wpp4" step="0.01" max="1" min="0" value="0.08"/>
+      </p>
+      <p>
+        Hydrogeology
+        <br />
+        <select name="Hydrogeology" id="Hydrogeology">
+          <option value=1>
+            Shallow, short flow systems, or compaction flow
+          </option>
+          <option value=3>Intermediate flow systems</option>
+          <option value="7">
+            Regional, long-range flow systems; topography or erosional flow
+          </option>
+        </select>
+        <input type="number" name="wpp5" id="wpp5" step="0.01" max="1" min="0" value="0.08"/>
+      </p>
+      <p>
+        Geothermal
+        <br />
+        <select name="Geothermal" id="Geothermal">
+          <option value=1>Warm basin</option>
+          <option value=3>Moderate</option>
+          <option value="7">Cold basin</option>
+        </select>
+        <input type="number" name="wpp6" id="wpp6" step="0.01" max="1" min="0" value="0.10"/>
+      </p>
+      <p>
+        Hydrocarbon potential
+        <br />
+        <select name="hydrocarbonPotential" id="hydrocarbonPotential">
+          <option value=1>None</option>
+          <option value=3>Small</option>
+          <option value=7>Medium</option>
+          <option value=13>Large</option>
+          <option value="21">Giant</option>
+        </select>
+        <input type="number" name="wpp7" id="wpp7" step="0.01" max="1" min="0" value="0.06"/>
+      </p>
+      <p>
+        Maturity
+        <br />
+        <select name="Maturity" id="Maturity">
+          <option value=1>Unexplored</option>
+          <option value=2>Exploration</option>
+          <option value=4>Developing</option>
+          <option value=8>Mature</option>
+          <option value="10">Over mature</option>
+        </select>
+        <input type="number" name="wpp8" id="wpp8" step="0.01" max="1" min="0" value="0.08"/>
+      </p>
+      <p>
+        Coal and CBM
+        <br />
+        <select name="coalAndCBM" id="coalAndCBM">
+          <option value=1>None</option>
+          <option value=2>Deep (>800 m)</option>
+          <option value="5">Shallow (200–800 m)</option>
+        </select>
+        <input type="number" name="wpp9" id="wpp9" step="0.01" max="1" min="0" value="0.04"/>
+      </p>
+      <p>
+        Salts
+        <br />
+        <select name="Salts" id="Salts">
+          <option value=1>None</option>
+          <option value=2>Domes</option>
+          <option value="3">Beds</option>
+        </select>
+        <input type="number" name="wpp10" id="wpp10" step="0.01" max="1" min="0" value="0.01"/>
+      </p>
+      <p>
+        On/Offshore
+        <br />
+        <select name="On/Offshore" id="On/Offshore">
+          <option value=1>Deep offshore</option>
+          <option value=4>Shallow offshore</option>
+          <option value="10">Onshore</option>
+        </select>
+        <input type="number" name="wpp11" id="wpp11" step="0.01" max="1" min="0" value="0.10"/>
+      </p>
+      <p>
+        Climate
+        <br />
+        <select name="Climate" id="Climate">
+          <option value=1>Arctic</option>
+          <option value=2>Sub-Arctic</option>
+          <option value=4>Desert</option>
+          <option value=7>Tropical</option>
+          <option value="11">Temperate</option>
+        </select>
+        <input type="number" name="wpp12" id="wpp12" step="0.01" max="1" min="0" value="0.08"/>
+      </p>
+      <p>
+        Accessibility
+        <br />
+        <select name="Accessibility" id="Accessibility">
+          <option value=1>Inaccessible</option>
+          <option value=3>Difficult</option>
+          <option value=6>Acceptable</option>
+          <option value="10">Easy</option>
+        </select>
+        <input type="number" name="wpp13" id="wpp13" step="0.01" max="1" min="0" value="0.03"/>
+      </p>
+      <p>
+        Infrastructure
+        <br />
+        <select name="Infrastructure" id="Infrastructure">
+          <option value=1>None</option>
+          <option value=3>Minor</option>
+          <option value=7>Moderate</option>
+          <option value="10">Extensive</option>
+        </select>
+        <input type="number" name="wpp14" id="wpp14" step="0.01" max="1" min="0" value="0.05"/>
+      </p>
+      <p>
+        CO₂ Sources
+        <br />
+        <select name="CO2Sources" id="CO2Sources">
+          <option value=1>None</option>
+          <option value=3>Few</option>
+          <option value=7>Moderate</option>
+          <option value="15">Major</option>
+        </select>
+        <input type="number" name="wpp15" id="wpp15" step="0.01" max="1" min="0" value="0.09"/>
+      </p>
+      <a href="">
+        <button type="submit">Next</button></a
+      >
+
+    </div>
+    <script>
+      function Calcula() {
+
+        var tectonicSetting = parseInt(document.getElementById('tectonicSetting').value);
+        var Size = parseInt(document.getElementById('Size').value);
+        var Depth =  parseInt(document.getElementById('Depth').value);
+        var Geology =  parseInt(document.getElementById('Geology').value);
+        var Hydrogeology =  parseInt(document.getElementById('Hydrogeology').value);
+        var Geothermal =  parseInt(document.getElementById('Geothermal').value);
+        var hydrocarbonPotential =  parseInt(document.getElementById('hydrocarbonPotential').value);
+        var Maturity =  parseInt(document.getElementById('Maturity').value);
+        var coalAndCBM =  parseInt(document.getElementById('coalAndCBM').value);
+        var Salts =  parseInt(document.getElementById('Salts').value);
+        var OnOffshore =  parseInt(document.getElementById('On/Offshore').value);
+        var Climate =  parseInt(document.getElementById('Climate').value);
+        var Accessibility =  parseInt(document.getElementById('Accessibility').value);
+        var Infrastructure =  parseInt(document.getElementById('Infrastructure').value);
+        var CO2Sources =  parseInt(document.getElementById('CO2Sources').value);
+                //Weight
+        var wP1= document.getElementById("wpp1").value
+        var wP2= document.getElementById("wpp1").value
+        var wP3= document.getElementById("wpp1").value
+        var wP4= document.getElementById("wpp1").value
+        var wP5= document.getElementById("wpp1").value
+        var wP6= document.getElementById("wpp1").value
+        var wP7= document.getElementById("wpp1").value
+        var wP8= document.getElementById("wpp1").value
+        var wP9= document.getElementById("wpp1").value
+        var wP10= document.getElementById("wpp1").value
+        var wP11= document.getElementById("wpp1").value
+        var wP12= document.getElementById("wpp1").value
+        var wP13= document.getElementById("wpp1").value
+        var wP14= document.getElementById("wpp1").value
+        var wP15= document.getElementById("wpp1").value
+        //equation 2
+        var p1= (tectonicSetting -1) / (15-1);
+        var p2= (Size -1) / (9-1);
+        var p3= (Depth -1) / (5-1);
+        var p4= (Geology -1) / (7-1);
+        var p5= (Hydrogeology -1) / (7-1);
+        var p6= (Geothermal -1) / (7-1);
+        var p7= (hydrocarbonPotential -1) / (21-1);
+        var p8= (Maturity -1) / (10-1);
+        var p9= (coalAndCBM -1) / (5-1);
+        var p10= (Salts -1) / (3-1);
+        var p11= (OnOffshore -1) / (10-1);
+        var p12= (Climate -1) / (11-1);
+        var p13= (Accessibility -1) / (10-1);
+        var p14= (Infrastructure -1) / (10-1);
+        var p15= (CO2Sources -1) / (15-1);
+        //equation 3
+        var Rk = wP1 * p1 + wP2 * p2 + wP3 * p3 + wP4 * p4 + wP5 * p5 + wP6 * p6 + wP7 * p7 + wP8 * p8 + wP9 * p9 + wP10 * p10 + wP11 * p11 + wP12 * p12 + wP13 * p13 + wP14 * p14 +wP15 * p15;
+        alert("The basin ranking is "+Rk+" . When results closer to 1 are most favourable, and those closer to 0 are less favourable. However, it is essential to note that the results of this ranking process are not absolute, when making a final decision.");
+      
+        return false;
+        }
+    </script>
+
+  </body>
+</html>
